@@ -2,15 +2,33 @@ using UnityEngine;
 
 public class Weapon : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    private int damage;
+    private int ammo = 10;
+
     void Start()
     {
         
     }
-
-    // Update is called once per frame
-    void Update()
+    public void Shoot(Player target)
     {
-        
+        if (target == null || ammo <= 0)
+            return;
+
+        //->if
+        if (ammo <= 0)
+        {
+            Debug.Log("No Bullets");
+        }
+
+        //-> else
+        else
+        {
+            target.TakeDamage(damage);
+
+            Debug.Log("Shoot!");
+
+            ammo--;
+        }
     }
+
 }

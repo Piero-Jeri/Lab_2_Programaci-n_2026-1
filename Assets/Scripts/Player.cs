@@ -13,4 +13,10 @@ public class Player : MonoBehaviour
     {
         
     }
+
+    public void TakeDamage(int damage)
+    {
+        //-> Manera para llamar el TakeDamage entre clases
+        health.TakeDamage(damage);
+    }
 }
